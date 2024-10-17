@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "parLogAnalyticsWorkspaceResourceId": {
-      "value": ""
+      "value": "b5372759-233c-495f-ae78-26adf7528993"
     },
     "parDiagnosticSettingsName": {
       "value": "toLa"
