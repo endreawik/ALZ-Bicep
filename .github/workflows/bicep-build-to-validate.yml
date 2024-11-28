@@ -11,11 +11,13 @@ on:
       - "**/bicepconfig.json"
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+
 jobs:
   bicep_unit_tests:
     name: Bicep Build & Lint All Modules
     runs-on: ubuntu-latest
-
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
@@ -23,7 +25,7 @@ jobs:
           egress-policy: audit
 
       - name: Checkout Repo
-        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
@@ -117,7 +119,6 @@ jobs:
   azure_waf:
     name: Test Azure Well-Architected Framework (PSRule)
     runs-on: ubuntu-latest
-
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
@@ -125,7 +126,7 @@ jobs:
           egress-policy: audit
 
       - name: Checkout Repo
-        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
